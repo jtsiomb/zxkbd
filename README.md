@@ -12,6 +12,8 @@ The firmware reads PS/2 keyboard scancodes, maintains a virtual spectrum
 keyboard state, and monitors the address bus to keep the data lines going into
 the ULA continuously up to date with the selected key row state.
 
+NOTE: not done. check back soon.
+
 License
 -------
 Copyright (C) 2020 John Tsiombikas <nuclear@member.fsf.org>
