@@ -9,6 +9,7 @@
 #include "defs.h"
 #include "timer.h"
 #include "zxkbd.h"
+#include "ansi.h"
 
 enum {
 	KF_BRK = 1,
@@ -46,7 +47,11 @@ int main(void)
 	init_serial(9600);
 	sei();
 
+	ansi_reset();
+	ansi_clearscr();
+	ansi_cursor(0);
 	printf("PS/2 keyboard controller - John Tsiombikas <nuclear@member.fsf.org>\r\n");
+	fflush(stdout);
 
 	EIMSK = 1 << INT0;	/* enable ps/2 clock interrupt */
 

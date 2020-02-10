@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "ansi.h"
 #include "defs.h"
 
 enum {
@@ -31,7 +33,7 @@ static const unsigned char keyrow[] = {
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,						/* 00 - 07 */
 	0xff, 0xff, KEY(RENTER), 0xff, 0xff, KEY(RENTER), 0xff, 0xff,		/* 08 - 0f */
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,						/* 10 - 17 */
-	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,						/* 18 - 1f */
+	0xff, 0xff, 0xff, PAIR(RCAPS, RSPACE), 0xff, 0xff, 0xff, 0xff,		/* 18 - 1f */
 	KEY(RSPACE), PAIR(RSYMB, R1), PAIR(RSYMB, RP), PAIR(RSYMB, R3),		/* 20 - 23 */
 	PAIR(RSYMB, R4), PAIR(RSYMB, R5), PAIR(RSYMB, R6), PAIR(RSYMB, R7),	/* 23 - 27 */
 	PAIR(RSYMB, R8), PAIR(RSYMB, R9), PAIR(RSYMB, RB), PAIR(RSYMB, RK), /* 28 - 2b */
@@ -61,7 +63,7 @@ static const unsigned char keycol[] = {
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,						/* 00 - 07 */
 	0xff, 0xff, KEY(CENTER), 0xff, 0xff, KEY(CENTER), 0xff, 0xff,		/* 08 - 0f */
 	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,						/* 10 - 17 */
-	0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,						/* 18 - 1f */
+	0xff, 0xff, 0xff, PAIR(CCAPS, CSPACE), 0xff, 0xff, 0xff, 0xff,		/* 18 - 1f */
 	KEY(CSPACE), PAIR(CSYMB, C1), PAIR(CSYMB, CP), PAIR(CSYMB, C3),		/* 20 - 23 */
 	PAIR(CSYMB, C4), PAIR(CSYMB, C5), PAIR(CSYMB, C6), PAIR(CSYMB, C7),	/* 23 - 27 */
 	PAIR(CSYMB, C8), PAIR(CSYMB, C9), PAIR(CSYMB, CB), PAIR(CSYMB, CK), /* 28 - 2b */
@@ -90,7 +92,13 @@ static unsigned char keystate[8];
 
 void zxkbd_key(int keycode, int press)
 {
+	/*int i, j;*/
 	unsigned char row, col, krow, kcol, mrow, mcol, mask;
+
+	/*
+	ansi_setcursor(1, 0);
+	printf("%s %x        ", press ? "  press" : "release", (unsigned int)keycode);
+	*/
 
 	row = keyrow[keycode];
 	if(row == 0xff) return;
@@ -117,6 +125,21 @@ void zxkbd_key(int keycode, int press)
 			keystate[mrow] &= ~mask;
 		}
 	}
+
+	/*
+	ansi_setcursor(3, 0);
+	printf("ZX Keystate:\r\n");
+	for(i=0; i<8; i++) {
+		printf("row[%d]: ", i);
+		mask = 0x10;
+		for(j=0; j<5; j++) {
+			putchar(keystate[i] & mask ? '1' : '0');
+			mask >>= 1;
+		}
+		fputs("\r\n", stdout);
+	}
+	fflush(stdout);
+	*/
 }
 
 void update_zxkbd(void)
@@ -131,14 +154,37 @@ void update_zxkbd(void)
 	pb = PINB;
 
 	data = 0;
-	if(pc & 0x10) data |= keystate[0];
-	if(pc & 0x20) data |= keystate[1];
-	if(pb & 0x01) data |= keystate[2];
-	if(pb & 0x02) data |= keystate[3];
-	if(pc & 0x01) data |= keystate[4];
-	if(pc & 0x02) data |= keystate[5];
-	if(pc & 0x04) data |= keystate[6];
-	if(pc & 0x08) data |= keystate[7];
+	if((pc & 0x10) == 0) data |= keystate[0];
+	if((pc & 0x20) == 0) data |= keystate[1];
+	if((pb & 0x01) == 0) data |= keystate[2];
+	if((pb & 0x02) == 0) data |= keystate[3];
+	if((pc & 0x01) == 0) data |= keystate[4];
+	if((pc & 0x02) == 0) data |= keystate[5];
+	if((pc & 0x04) == 0) data |= keystate[6];
+	if((pc & 0x08) == 0) data |= keystate[7];
+
+	/*
+	{
+		unsigned char addr, y;
+		addr = ((pc >> 4) & 3) | ((pc << 4) & 0xf0) | ((pb & 3) << 2);
+		switch(addr) {
+		case 0x01: y = 4; break;
+		case 0x02: y = 5; break;
+		case 0x04: y = 6; break;
+		case 0x08: y = 7; break;
+		case 0x10: y = 8; break;
+		case 0x20: y = 9; break;
+		case 0x40: y = 10; break;
+		case 0x80: y = 11; break;
+		default:
+			y = 1;
+			break;
+		}
+		ansi_setcursor(y, 32);
+		printf("A:%02x D:%02x", (unsigned int)addr, (unsigned int)data);
+		fflush(stdout);
+	}
+	*/
 
 	/* write to the data bus */
 	PORTD = ~data << 3;
