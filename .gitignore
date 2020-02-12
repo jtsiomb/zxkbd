@@ -4,9 +4,9 @@
 *.bak
 *.bck
 *.dcm
-*-cache.lib
 *.bin
 *.hex
 *.eep
 *.map
+*.sch-bak
 fw/zxkbd
