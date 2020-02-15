@@ -239,17 +239,6 @@ Entry Wire Line
 Wire Bus Line
 	5850 650  7550 650 
 Connection ~ 5850 650 
-$Comp
-L zxkbd:pentagon_conn U8
-U 1 1 5E420CA4
-P 3500 4650
-F 0 "U8" H 3500 6115 50  0000 C CNN
-F 1 "pentagon_conn" H 3500 6024 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_2x32_P2.54mm_Vertical" H 3150 5800 50  0001 C CNN
-F 3 "" H 3150 5800 50  0001 C CNN
-	1    3500 4650
-	1    0    0    -1  
-$EndComp
 Connection ~ 7250 4250
 Wire Wire Line
 	7050 4250 7250 4250
@@ -338,8 +327,6 @@ F 3 "" H 8200 3200 50  0001 C CNN
 	1    8200 3200
 	1    0    0    -1  
 $EndComp
-Text Label 1250 3150 0    50   ~ 0
-KDA0
 Text Label 1250 4050 0    50   ~ 0
 KDA1
 Text Label 1250 4950 0    50   ~ 0
@@ -348,8 +335,6 @@ Text Label 1250 5850 0    50   ~ 0
 KDA3
 Text Label 1250 6750 0    50   ~ 0
 KDA4
-Text Label 1250 3250 0    50   ~ 0
-KDB0
 Text Label 1250 4150 0    50   ~ 0
 KDB1
 Text Label 1250 5050 0    50   ~ 0
@@ -358,8 +343,6 @@ Text Label 1250 5950 0    50   ~ 0
 KDB3
 Text Label 1250 6850 0    50   ~ 0
 KDB4
-Text Label 1250 3350 0    50   ~ 0
-KDC0
 Text Label 1250 4250 0    50   ~ 0
 KDC1
 Text Label 1250 5150 0    50   ~ 0
@@ -368,8 +351,6 @@ Text Label 1250 6050 0    50   ~ 0
 KDC3
 Text Label 1250 6950 0    50   ~ 0
 KDC4
-Text Label 1250 3450 0    50   ~ 0
-KDD0
 Text Label 1250 4350 0    50   ~ 0
 KDD1
 Text Label 1250 5250 0    50   ~ 0
@@ -378,8 +359,6 @@ Text Label 1250 6150 0    50   ~ 0
 KDD3
 Text Label 1250 7050 0    50   ~ 0
 KDD4
-Text Label 1250 3550 0    50   ~ 0
-KDE0
 Text Label 1250 4450 0    50   ~ 0
 KDE1
 Text Label 1250 5350 0    50   ~ 0
@@ -388,8 +367,6 @@ Text Label 1250 6250 0    50   ~ 0
 KDE3
 Text Label 1250 7150 0    50   ~ 0
 KDE4
-Text Label 1250 3650 0    50   ~ 0
-KDF0
 Text Label 1250 4550 0    50   ~ 0
 KDF1
 Text Label 1250 5450 0    50   ~ 0
@@ -398,8 +375,6 @@ Text Label 1250 6350 0    50   ~ 0
 KDF3
 Text Label 1250 7250 0    50   ~ 0
 KDF4
-Text Label 1250 3750 0    50   ~ 0
-KDG0
 Text Label 1250 4650 0    50   ~ 0
 KDG1
 Text Label 1250 5550 0    50   ~ 0
@@ -408,8 +383,6 @@ Text Label 1250 6450 0    50   ~ 0
 KDG3
 Text Label 1250 7350 0    50   ~ 0
 KDG4
-Text Label 1250 3850 0    50   ~ 0
-KDH0
 Text Label 1250 4750 0    50   ~ 0
 KDH1
 Text Label 1250 5650 0    50   ~ 0
@@ -761,59 +734,48 @@ KDH3
 Text Label 10500 5300 0    50   ~ 0
 KDH4
 $Comp
-L 74xx:74LS30 U2
-U 1 1 5FD10EEE
-P 1850 3450
-F 0 "U2" H 1800 3650 50  0000 C CNN
-F 1 "74HC30" H 1850 3450 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 3450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 3450 50  0001 C CNN
-	1    1850 3450
-	1    0    0    -1  
-$EndComp
-$Comp
 L 74xx:74LS30 U3
 U 1 1 5FD13AF5
-P 1850 4350
-F 0 "U3" H 1800 4550 50  0000 C CNN
-F 1 "74HC30" H 1850 4350 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 4350 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 4350 50  0001 C CNN
-	1    1850 4350
-	1    0    0    -1  
+P 1850 4450
+F 0 "U3" H 1800 4650 50  0000 C CNN
+F 1 "74HC30" H 1850 4450 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 4450 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 4450 50  0001 C CNN
+	1    1850 4450
+	1    0    0    1   
 $EndComp
 $Comp
 L 74xx:74LS30 U4
 U 1 1 5FD14EE7
-P 1850 5250
-F 0 "U4" H 1800 5450 50  0000 C CNN
-F 1 "74HC30" H 1850 5250 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 5250 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 5250 50  0001 C CNN
-	1    1850 5250
-	1    0    0    -1  
+P 1850 5350
+F 0 "U4" H 1800 5550 50  0000 C CNN
+F 1 "74HC30" H 1850 5350 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 5350 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 5350 50  0001 C CNN
+	1    1850 5350
+	1    0    0    1   
 $EndComp
 $Comp
 L 74xx:74LS30 U5
 U 1 1 5FD164CF
-P 1850 6150
-F 0 "U5" H 1800 6350 50  0000 C CNN
-F 1 "74HC30" H 1850 6150 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 6150 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 6150 50  0001 C CNN
-	1    1850 6150
-	1    0    0    -1  
+P 1850 6250
+F 0 "U5" H 1800 6450 50  0000 C CNN
+F 1 "74HC30" H 1850 6250 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 6250 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 6250 50  0001 C CNN
+	1    1850 6250
+	1    0    0    1   
 $EndComp
 $Comp
 L 74xx:74LS30 U6
 U 1 1 5FD17145
-P 1850 7050
-F 0 "U6" H 1800 7250 50  0000 C CNN
-F 1 "74HC30" H 1850 7050 50  0000 C CNN
-F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 7050 50  0001 C CNN
-F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 7050 50  0001 C CNN
-	1    1850 7050
-	1    0    0    -1  
+P 1850 7150
+F 0 "U6" H 1800 7350 50  0000 C CNN
+F 1 "74HC30" H 1850 7150 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 7150 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 7150 50  0001 C CNN
+	1    1850 7150
+	1    0    0    1   
 $EndComp
 Wire Wire Line
 	1250 3150 1550 3150
@@ -894,21 +856,21 @@ Wire Wire Line
 Wire Wire Line
 	1250 7450 1550 7450
 Wire Wire Line
-	2150 4350 2200 4350
+	2150 4450 2200 4450
 Wire Wire Line
-	2200 4350 2200 3550
+	2200 4450 2200 3550
 Wire Wire Line
-	2150 5250 2250 5250
+	2150 5350 2250 5350
 Wire Wire Line
-	2250 5250 2250 3650
+	2250 5350 2250 3650
 Wire Wire Line
-	2150 6150 2300 6150
+	2150 6250 2300 6250
 Wire Wire Line
-	2300 6150 2300 3750
+	2300 6250 2300 3750
 Wire Wire Line
-	2150 7050 2350 7050
+	2150 7150 2350 7150
 Wire Wire Line
-	2350 7050 2350 3850
+	2350 7150 2350 3850
 Wire Wire Line
 	2350 3850 2950 3850
 Wire Wire Line
@@ -931,17 +893,6 @@ F 3 "" H 850 3150 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Network08 RN2
-U 1 1 5FF6F93F
-P 1050 4450
-F 0 "RN2" V 550 4500 50  0000 C CNN
-F 1 "4k7" H 1000 4650 50  0000 C CNN
-F 2 "Resistor_THT:R_Array_SIP9" V 1525 4450 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 1050 4450 50  0001 C CNN
-	1    1050 4450
-	0    -1   1    0   
-$EndComp
-$Comp
 L power:VCC #PWR03
 U 1 1 5FF6F949
 P 850 4050
@@ -955,28 +906,6 @@ $EndComp
 Wire Wire Line
 	1250 3750 1550 3750
 $Comp
-L Device:R_Network08 RN1
-U 1 1 5FF67632
-P 1050 3550
-F 0 "RN1" V 550 3600 50  0000 C CNN
-F 1 "4k7" H 1000 3750 50  0000 C CNN
-F 2 "Resistor_THT:R_Array_SIP9" V 1525 3550 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 1050 3550 50  0001 C CNN
-	1    1050 3550
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:R_Network08 RN3
-U 1 1 5FF99FD3
-P 1050 5350
-F 0 "RN3" V 550 5400 50  0000 C CNN
-F 1 "4k7" H 1000 5550 50  0000 C CNN
-F 2 "Resistor_THT:R_Array_SIP9" V 1525 5350 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 1050 5350 50  0001 C CNN
-	1    1050 5350
-	0    -1   1    0   
-$EndComp
-$Comp
 L power:VCC #PWR04
 U 1 1 5FF99FDD
 P 850 4950
@@ -988,17 +917,6 @@ F 3 "" H 850 4950 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Network08 RN4
-U 1 1 5FFAE6BF
-P 1050 6250
-F 0 "RN4" V 550 6300 50  0000 C CNN
-F 1 "4k7" H 1000 6450 50  0000 C CNN
-F 2 "Resistor_THT:R_Array_SIP9" V 1525 6250 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 1050 6250 50  0001 C CNN
-	1    1050 6250
-	0    -1   1    0   
-$EndComp
-$Comp
 L power:VCC #PWR05
 U 1 1 5FFAE6C9
 P 850 5850
@@ -1008,17 +926,6 @@ F 2 "" H 850 5850 50  0001 C CNN
 F 3 "" H 850 5850 50  0001 C CNN
 	1    850  5850
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R_Network08 RN5
-U 1 1 5FFC19FD
-P 1050 7150
-F 0 "RN5" V 550 7200 50  0000 C CNN
-F 1 "4k7" H 1000 7350 50  0000 C CNN
-F 2 "Resistor_THT:R_Array_SIP9" V 1525 7150 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 1050 7150 50  0001 C CNN
-	1    1050 7150
-	0    -1   1    0   
 $EndComp
 $Comp
 L power:VCC #PWR06
@@ -1180,17 +1087,6 @@ Text Label 4900 6050 1    50   ~ 0
 A_R
 Text Label 4050 4950 0    50   ~ 0
 SOUND
-$Comp
-L Connector:AudioJack2 J2
-U 1 1 602CFA21
-P 3750 5900
-F 0 "J2" H 3850 5750 50  0000 R CNN
-F 1 "TAPIN" H 3850 6100 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 3750 5900 50  0001 C CNN
-F 3 "~" H 3750 5900 50  0001 C CNN
-	1    3750 5900
-	-1   0    0    1   
-$EndComp
 Wire Wire Line
 	4150 5200 4050 5200
 Wire Wire Line
@@ -1202,44 +1098,13 @@ Wire Wire Line
 Text Label 3450 5500 0    50   ~ 0
 TAPOUT
 Wire Wire Line
-	3550 5650 3550 5900
-Wire Wire Line
 	4150 5200 4150 5650
 Text Label 3650 5650 0    50   ~ 0
 TAPIN
-$Comp
-L power:GND #PWR017
-U 1 1 603B45C9
-P 3450 6100
-F 0 "#PWR017" H 3450 5850 50  0001 C CNN
-F 1 "GND" H 3455 5927 50  0000 C CNN
-F 2 "" H 3450 6100 50  0001 C CNN
-F 3 "" H 3450 6100 50  0001 C CNN
-	1    3450 6100
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3350 5900 3350 5500
-$Comp
-L Connector:AudioJack2 J1
-U 1 1 602D0CD2
-P 3150 5900
-F 0 "J1" H 3150 5750 50  0000 R CNN
-F 1 "TAPOUT" H 3250 6100 50  0000 R CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Horizontal" H 3150 5900 50  0001 C CNN
-F 3 "~" H 3150 5900 50  0001 C CNN
-	1    3150 5900
-	1    0    0    1   
-$EndComp
 Wire Wire Line
 	3550 5650 4150 5650
-Wire Wire Line
-	3350 6000 3450 6000
-Wire Wire Line
-	3450 6100 3450 6000
-Connection ~ 3450 6000
-Wire Wire Line
-	3450 6000 3550 6000
 $Comp
 L power:GND #PWR014
 U 1 1 6040C889
@@ -2094,7 +1959,7 @@ U 1 1 604B1EF3
 P 6650 6200
 F 0 "U11" V 6400 6300 50  0000 L CNN
 F 1 "PS2CONN" V 6850 6350 50  0000 L CNN
-F 2 "" H 6650 6200 50  0001 C CNN
+F 2 "zxkbd:ps2conn" H 6650 6200 50  0001 C CNN
 F 3 "" H 6650 6200 50  0001 C CNN
 	1    6650 6200
 	0    -1   1    0   
@@ -2112,17 +1977,6 @@ F 3 "" H 2600 7350 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	2600 7350 2800 7350
-$Comp
-L Device:R_Network08 RN6
-U 1 1 61ACBD15
-P 4950 3850
-F 0 "RN6" V 4450 3800 50  0000 C CNN
-F 1 "4k7" H 4900 4050 50  0000 C CNN
-F 2 "Resistor_THT:R_Array_SIP9" V 5425 3850 50  0001 C CNN
-F 3 "http://www.vishay.com/docs/31509/csc.pdf" H 4950 3850 50  0001 C CNN
-	1    4950 3850
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4750 4150 4650 4150
 Connection ~ 4650 4150
@@ -2150,12 +2004,12 @@ Connection ~ 4300 3450
 $Comp
 L power:VCC #PWR023
 U 1 1 61C20732
-P 5150 3450
-F 0 "#PWR023" H 5150 3300 50  0001 C CNN
-F 1 "VCC" H 5167 3623 50  0000 C CNN
-F 2 "" H 5150 3450 50  0001 C CNN
-F 3 "" H 5150 3450 50  0001 C CNN
-	1    5150 3450
+P 5250 3550
+F 0 "#PWR023" H 5250 3400 50  0001 C CNN
+F 1 "VCC" H 5267 3723 50  0000 C CNN
+F 2 "" H 5250 3550 50  0001 C CNN
+F 3 "" H 5250 3550 50  0001 C CNN
+	1    5250 3550
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -2339,20 +2193,6 @@ Wire Wire Line
 Connection ~ 7300 4800
 Wire Wire Line
 	7300 4800 7300 5000
-Wire Bus Line
-	7550 650  7550 1550
-Wire Bus Line
-	5850 650  5850 1550
-Wire Bus Line
-	4150 650  4150 1550
-Wire Bus Line
-	2450 650  2450 1550
-Wire Bus Line
-	750  650  750  1550
-Wire Bus Line
-	7300 5600 7300 6400
-Wire Bus Line
-	9250 650  9250 6400
 Wire Wire Line
 	2700 1850 2700 1950
 Wire Wire Line
@@ -2370,4 +2210,261 @@ F 3 "http://www.ti.com/lit/gpn/sn74LS373" H 3200 1750 50  0001 C CNN
 	1    3200 1750
 	1    0    0    -1  
 $EndComp
+$Comp
+L zxkbd:R_Network08_SMD RN1
+U 1 1 5E4E8A56
+P 1050 3550
+F 0 "RN1" V 550 3600 50  0000 C CNN
+F 1 "4k7" H 1000 3750 50  0000 C CNN
+F 2 "Resistor_SMD:R_Array_Convex_5x1206" V 1525 3550 50  0001 C CNN
+F 3 "" H 1050 3550 50  0001 C CNN
+	1    1050 3550
+	0    -1   1    0   
+$EndComp
+NoConn ~ 850  3250
+$Comp
+L zxkbd:R_Network08_SMD RN2
+U 1 1 5E552B82
+P 1050 4450
+F 0 "RN2" V 550 4500 50  0000 C CNN
+F 1 "4k7" H 1000 4650 50  0000 C CNN
+F 2 "Resistor_SMD:R_Array_Convex_5x1206" V 1525 4450 50  0001 C CNN
+F 3 "" H 1050 4450 50  0001 C CNN
+	1    1050 4450
+	0    -1   1    0   
+$EndComp
+NoConn ~ 850  4150
+$Comp
+L zxkbd:R_Network08_SMD RN3
+U 1 1 5E57A706
+P 1050 5350
+F 0 "RN3" V 550 5400 50  0000 C CNN
+F 1 "4k7" H 1000 5550 50  0000 C CNN
+F 2 "Resistor_SMD:R_Array_Convex_5x1206" V 1525 5350 50  0001 C CNN
+F 3 "" H 1050 5350 50  0001 C CNN
+	1    1050 5350
+	0    -1   1    0   
+$EndComp
+NoConn ~ 850  5050
+$Comp
+L zxkbd:R_Network08_SMD RN4
+U 1 1 5E5A201E
+P 1050 6250
+F 0 "RN4" V 550 6300 50  0000 C CNN
+F 1 "4k7" H 1000 6450 50  0000 C CNN
+F 2 "Resistor_SMD:R_Array_Convex_5x1206" V 1525 6250 50  0001 C CNN
+F 3 "" H 1050 6250 50  0001 C CNN
+	1    1050 6250
+	0    -1   1    0   
+$EndComp
+NoConn ~ 850  5950
+$Comp
+L zxkbd:R_Network08_SMD RN5
+U 1 1 5E5C9546
+P 1050 7150
+F 0 "RN5" V 550 7200 50  0000 C CNN
+F 1 "4k7" H 1000 7350 50  0000 C CNN
+F 2 "Resistor_SMD:R_Array_Convex_5x1206" V 1525 7150 50  0001 C CNN
+F 3 "" H 1050 7150 50  0001 C CNN
+	1    1050 7150
+	0    -1   1    0   
+$EndComp
+NoConn ~ 850  6850
+$Comp
+L zxkbd:R_Network08_SMD RN6
+U 1 1 5E5F427E
+P 4950 3850
+F 0 "RN6" V 4450 3900 50  0000 C CNN
+F 1 "4k7" H 4900 4050 50  0000 C CNN
+F 2 "Resistor_SMD:R_Array_Convex_5x1206" V 5425 3850 50  0001 C CNN
+F 3 "" H 4950 3850 50  0001 C CNN
+	1    4950 3850
+	0    1    1    0   
+$EndComp
+$Comp
+L zxkbd:pentagon_conn U8
+U 1 1 5E6DEC92
+P 3500 4650
+F 0 "U8" H 3500 6115 50  0000 C CNN
+F 1 "pentagon_conn" H 3500 6024 50  0000 C CNN
+F 2 "zxkbd:pentconn" H 3150 5800 50  0001 C CNN
+F 3 "" H 3150 5800 50  0001 C CNN
+	1    3500 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J1
+U 1 1 5E75D36B
+P 3150 6000
+F 0 "J1" H 3100 6200 50  0000 L CNN
+F 1 "TAPE" V 3250 5900 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 3150 6000 50  0001 C CNN
+F 3 "~" H 3150 6000 50  0001 C CNN
+	1    3150 6000
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	3550 6100 3350 6100
+Wire Wire Line
+	3550 5650 3550 6100
+Wire Wire Line
+	3350 6000 3400 6000
+Wire Wire Line
+	3400 6000 3400 6150
+$Comp
+L power:GND #PWR017
+U 1 1 5E7BA32E
+P 3400 6150
+F 0 "#PWR017" H 3400 5900 50  0001 C CNN
+F 1 "GND" H 3400 6000 50  0000 C CNN
+F 2 "" H 3400 6150 50  0001 C CNN
+F 3 "" H 3400 6150 50  0001 C CNN
+	1    3400 6150
+	1    0    0    -1  
+$EndComp
+Text Label 1250 3550 0    50   ~ 0
+KDE0
+Text Label 1250 3650 0    50   ~ 0
+KDF0
+Text Label 1250 3750 0    50   ~ 0
+KDG0
+Text Label 1250 3850 0    50   ~ 0
+KDH0
+Text Label 1250 3250 0    50   ~ 0
+KDB0
+Text Label 1250 3350 0    50   ~ 0
+KDC0
+Text Label 1250 3450 0    50   ~ 0
+KDD0
+Text Label 1250 3150 0    50   ~ 0
+KDA0
+Wire Wire Line
+	2150 3450 2150 3550
+Wire Wire Line
+	5150 3550 5250 3550
+NoConn ~ 5150 3450
+$Comp
+L 74xx:74LS30 U2
+U 1 1 5FD10EEE
+P 1850 3550
+F 0 "U2" H 1800 3750 50  0000 C CNN
+F 1 "74HC30" H 1850 3550 50  0000 C CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H 1850 3550 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H 1850 3550 50  0001 C CNN
+	1    1850 3550
+	1    0    0    1   
+$EndComp
+$Comp
+L 74xx:74LS30 U2
+U 2 1 5EC3E84A
+P -550 3750
+F 0 "U2" H -780 3796 50  0000 R CNN
+F 1 "74HC30" H -780 3705 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H -550 3750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H -550 3750 50  0001 C CNN
+	2    -550 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS30 U3
+U 2 1 5EC6CC5D
+P -1050 3750
+F 0 "U3" H -1279 3796 50  0000 R CNN
+F 1 "74HC30" H -1279 3705 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H -1050 3750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H -1050 3750 50  0001 C CNN
+	2    -1050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS30 U4
+U 2 1 5EC6E128
+P -1550 3750
+F 0 "U4" H -1779 3796 50  0000 R CNN
+F 1 "74HC30" H -1779 3705 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H -1550 3750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H -1550 3750 50  0001 C CNN
+	2    -1550 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS30 U5
+U 2 1 5EC7BA43
+P -2050 3750
+F 0 "U5" H -2279 3796 50  0000 R CNN
+F 1 "74HC30" H -2279 3705 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H -2050 3750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H -2050 3750 50  0001 C CNN
+	2    -2050 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74xx:74LS30 U6
+U 2 1 5EC7C99D
+P -2550 3750
+F 0 "U6" H -2779 3796 50  0000 R CNN
+F 1 "74HC30" H -2779 3705 50  0000 R CNN
+F 2 "Package_SO:SOIC-14_3.9x8.7mm_P1.27mm" H -2550 3750 50  0001 C CNN
+F 3 "http://www.ti.com/lit/gpn/sn74LS30" H -2550 3750 50  0001 C CNN
+	2    -2550 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:VCC #PWR?
+U 1 1 5ED2CB27
+P -1550 3250
+F 0 "#PWR?" H -1550 3100 50  0001 C CNN
+F 1 "VCC" H -1533 3423 50  0000 C CNN
+F 2 "" H -1550 3250 50  0001 C CNN
+F 3 "" H -1550 3250 50  0001 C CNN
+	1    -1550 3250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ED2DB02
+P -1550 4250
+F 0 "#PWR?" H -1550 4000 50  0001 C CNN
+F 1 "GND" H -1545 4077 50  0000 C CNN
+F 2 "" H -1550 4250 50  0001 C CNN
+F 3 "" H -1550 4250 50  0001 C CNN
+	1    -1550 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	-2550 4250 -2050 4250
+Connection ~ -2050 4250
+Wire Wire Line
+	-2050 4250 -1550 4250
+Connection ~ -1550 4250
+Wire Wire Line
+	-1550 4250 -1050 4250
+Connection ~ -1050 4250
+Wire Wire Line
+	-1050 4250 -550 4250
+Wire Wire Line
+	-2550 3250 -2050 3250
+Wire Bus Line
+	7550 650  7550 1550
+Wire Bus Line
+	5850 650  5850 1550
+Wire Bus Line
+	4150 650  4150 1550
+Wire Bus Line
+	2450 650  2450 1550
+Wire Bus Line
+	750  650  750  1550
+Wire Bus Line
+	7300 5600 7300 6400
+Wire Bus Line
+	9250 650  9250 6400
+Connection ~ -2050 3250
+Wire Wire Line
+	-2050 3250 -1550 3250
+Connection ~ -1550 3250
+Wire Wire Line
+	-1550 3250 -1050 3250
+Connection ~ -1050 3250
+Wire Wire Line
+	-1050 3250 -550 3250
 $EndSCHEMATC
