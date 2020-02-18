@@ -2444,6 +2444,66 @@ Wire Wire Line
 	-1050 4250 -550 4250
 Wire Wire Line
 	-2550 3250 -2050 3250
+Connection ~ -2050 3250
+Wire Wire Line
+	-2050 3250 -1550 3250
+Connection ~ -1550 3250
+Wire Wire Line
+	-1550 3250 -1050 3250
+Connection ~ -1050 3250
+Wire Wire Line
+	-1050 3250 -550 3250
+$Comp
+L Device:C_Small C15
+U 1 1 5F1D8CBC
+P 5050 7250
+F 0 "C15" H 5000 7450 50  0000 L CNN
+F 1 "0.1uF" H 4950 7050 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5050 7250 50  0001 C CNN
+F 3 "~" H 5050 7250 50  0001 C CNN
+	1    5050 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C16
+U 1 1 5F1D8CC6
+P 5300 7250
+F 0 "C16" H 5250 7450 50  0000 L CNN
+F 1 "0.1uF" H 5200 7050 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5300 7250 50  0001 C CNN
+F 3 "~" H 5300 7250 50  0001 C CNN
+	1    5300 7250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C17
+U 1 1 5F1D8CD0
+P 5550 7250
+F 0 "C17" H 5500 7450 50  0000 L CNN
+F 1 "0.1uF" H 5450 7050 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5550 7250 50  0001 C CNN
+F 3 "~" H 5550 7250 50  0001 C CNN
+	1    5550 7250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4800 7150 5050 7150
+Connection ~ 4800 7150
+Connection ~ 5050 7150
+Wire Wire Line
+	5050 7150 5300 7150
+Connection ~ 5300 7150
+Wire Wire Line
+	5300 7150 5550 7150
+Wire Wire Line
+	4800 7350 5050 7350
+Connection ~ 4800 7350
+Connection ~ 5050 7350
+Wire Wire Line
+	5050 7350 5300 7350
+Connection ~ 5300 7350
+Wire Wire Line
+	5300 7350 5550 7350
 Wire Bus Line
 	7550 650  7550 1550
 Wire Bus Line
@@ -2458,13 +2518,4 @@ Wire Bus Line
 	7300 5600 7300 6400
 Wire Bus Line
 	9250 650  9250 6400
-Connection ~ -2050 3250
-Wire Wire Line
-	-2050 3250 -1550 3250
-Connection ~ -1550 3250
-Wire Wire Line
-	-1550 3250 -1050 3250
-Connection ~ -1050 3250
-Wire Wire Line
-	-1050 3250 -550 3250
 $EndSCHEMATC
