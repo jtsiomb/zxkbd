@@ -90,10 +90,13 @@ static const unsigned char keycol[] = {
 
 static unsigned char keystate[8];
 
+static void update_row(int row);
+
 void zxkbd_key(int keycode, int press)
 {
 	/*int i, j;*/
 	unsigned char row, col, krow, kcol, mrow, mcol, mask;
+	unsigned char prev, kdirty = 0, mdirty = 0;
 
 	/*
 	ansi_setcursor(1, 0);
@@ -108,14 +111,17 @@ void zxkbd_key(int keycode, int press)
 	kcol = col & 0xf;
 	mrow = row >> 4;
 
+	prev = keystate[krow];
 	mask = 1 << kcol;
 	if(press) {
 		keystate[krow] |= mask;
 	} else {
 		keystate[krow] &= ~mask;
 	}
+	kdirty = keystate[krow] ^ prev;
 
 	if(mrow != 0xf) {
+		prev = keystate[mrow];
 		mcol = col >> 4;
 		mask = 1 << mcol;
 
@@ -123,6 +129,14 @@ void zxkbd_key(int keycode, int press)
 			keystate[mrow] |= mask;
 		} else {
 			keystate[mrow] &= ~mask;
+		}
+		mdirty = keystate[mrow] ^ prev;
+	}
+
+	if(kdirty) {
+		update_row(krow);
+		if(mdirty && mrow != krow) {
+			update_row(mrow);
 		}
 	}
 
@@ -142,50 +156,22 @@ void zxkbd_key(int keycode, int press)
 	*/
 }
 
-void update_zxkbd(void)
+static void update_row(int row)
 {
-	unsigned char data, pb, pc;
+	unsigned char selbit;
 
-	/* address bits 4-7 in port C 0-3
-	 *         bits 0-1 in port C 4-5
-	 *         bits 2-3 in port B 0-1
-	 */
-	pc = PINC;
-	pb = PINB;
-
-	data = 0;
-	if((pc & 0x10) == 0) data |= keystate[0];
-	if((pc & 0x20) == 0) data |= keystate[1];
-	if((pb & 0x01) == 0) data |= keystate[2];
-	if((pb & 0x02) == 0) data |= keystate[3];
-	if((pc & 0x01) == 0) data |= keystate[4];
-	if((pc & 0x02) == 0) data |= keystate[5];
-	if((pc & 0x04) == 0) data |= keystate[6];
-	if((pc & 0x08) == 0) data |= keystate[7];
-
-	/*
-	{
-		unsigned char addr, y;
-		addr = ((pc >> 4) & 3) | ((pc << 4) & 0xf0) | ((pb & 3) << 2);
-		switch(addr) {
-		case 0x01: y = 4; break;
-		case 0x02: y = 5; break;
-		case 0x04: y = 6; break;
-		case 0x08: y = 7; break;
-		case 0x10: y = 8; break;
-		case 0x20: y = 9; break;
-		case 0x40: y = 10; break;
-		case 0x80: y = 11; break;
-		default:
-			y = 1;
-			break;
-		}
-		ansi_setcursor(y, 32);
-		printf("A:%02x D:%02x", (unsigned int)addr, (unsigned int)data);
-		fflush(stdout);
+	/* setup the data pins */
+	PORTD = keystate[row] << 3;
+	/* latch on the correct register */
+	if(row < 6) {
+		selbit = 1 << row;
+		PORTC = ~selbit;
+		asm volatile("nop");	/* for good measure, probably not needed */
+		PORTC = selbit;
+	} else {
+		selbit = 1 << (row - 6);
+		PORTB = ~selbit;
+		asm volatile("nop");	/* same */
+		PORTB = selbit;
 	}
-	*/
-
-	/* write to the data bus */
-	PORTD = ~data << 3;
 }

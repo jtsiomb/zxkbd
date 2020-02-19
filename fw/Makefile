@@ -4,8 +4,8 @@ bin = zxkbd
 hex = $(bin).hex
 eep = $(bin).eep
 
-mcu_gcc = atmega168
-mcu_dude = m168
+mcu_gcc = atmega328p
+mcu_dude = m328p
 
 CC = avr-gcc
 OBJCOPY = avr-objcopy
@@ -39,16 +39,3 @@ program: $(hex)
 .PHONY: clean
 clean:
 	rm -f $(bin) $(obj) $(hex) $(eep) $(bin).map
-
-.PHONY: program-minipro
-program-minipro: $(hex)
-	minipro -S -p ATMEGA168V -c code -w $(hex)
-
-.PHONY: fuses-minipro
-fuses-minipro:
-	echo 'fuses_lo = 0x00e6' >fuses
-	echo 'fuses_hi = 0x00df' >>fuses
-	echo 'fuses_ext = 0x00f9' >>fuses
-	echo 'lock_byte = 0x00ff' >>fuses
-	minipro -p ATMEGA168V -c config -w fuses
-	rm -f fuses

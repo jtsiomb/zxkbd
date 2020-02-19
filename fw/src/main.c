@@ -32,12 +32,16 @@ int main(void)
 	/* disable all pullups globally */
 	MCUCR |= 1 << PUD;
 
-	DDRB = 0;
-	PORTB = 0;
-	DDRC = 0;
-	PORTC = 0;
-	DDRD = 0xf8;	/* bits 3-7 output (data bus) */
+	/* start with all latch signals off (high) */
+	DDRC = 0xff;
+	PORTC = 0xff;
+	DDRB = 3;
+	PORTB = 3;
+
+	/* data bits as outputs */
+	DDRD = 0xf8;
 	PORTD = 0xf8;
+
 	EIMSK = 0;	/* mask external interrupts */
 	EICRA = 1 << ISC01;	/* falling edge of PCLK triggers interrupt */
 
@@ -106,8 +110,6 @@ int main(void)
 				keyflags &= ~KF_TRANSIENT;
 			}
 		}
-
-		update_zxkbd();
 	}
 	return 0;
 }
