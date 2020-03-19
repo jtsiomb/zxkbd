@@ -6,11 +6,11 @@ number	description				pkg	mouser code
 1	BC846 NPN transistor			SOT-23	863-BC846BLT1G
 5	470ohm resistors			0805	71-CRCW0805-470-E3
 4	75ohm resistors				0805	71-CRCW0805-75-E3
-6	8-wide 4.7k resistor network, bused	1206	652-CAY17-472JALF
+6	8-wide 4.7k resistor network, bused	6.4x3.2	774-745C101472JP
 12	0.1uF bypass ceramic capacitors	(any)	0805	581-08055C104K
 2	22pF ceramic capacitors			0805	80-C0805C220J5G
 3	220uF 16v electrolytic caps		6.3x7.7	647-UWT1C221MCL1S
-1	7-pin mini-DIN connector (PS/2)		-	806-KMDGX-7S-BS
+1	6-pin mini-DIN connector (PS/2)		-	571-5749180-1
 1	Audio jack stereo			-	490-SJ1-3523N
 1	breakable single-row pin header (male)	-	538-42375-1863
 1	2x5 IDC connector (male)		-	710-61201021621
@@ -19,4 +19,3 @@ number	description				pkg	mouser code
 3	tactile switches			-	113-DTSGZML62NVTR
 
 Approximate cost: 20 euros
-Mouser shopping list: https://www.mouser.com/ProjectManager/ProjectDetail.aspx?AccessID=6f4f7fbd61
